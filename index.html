@@ -573,6 +573,11 @@
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
+  .is-past{
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    opacity: 0.65;
+  }
 
   /* ---------- CALLOUT ---------- */
   .callout{
@@ -1052,18 +1057,18 @@
     <div class="schedule">
       <div class="schedule-col">
         <h3><span class="dot dot-a"></span> Dream Team 42</h3>
-        <div class="date-row"><span class="day">Vendredi 4 septembre</span><span class="time">19h – 00h</span></div>
-        <div class="date-row"><span class="day">Dimanche 20 septembre</span><span class="time">10h – 17h</span></div>
-        <div class="date-row"><span class="day">Dimanche 18 octobre</span><span class="time">10h – 17h</span></div>
-        <div class="date-row"><span class="day">Vendredi 27 novembre</span><span class="time">19h – 00h</span></div>
-        <div class="date-row"><span class="day">Samedi 5 décembre</span><span class="time">14h – 00h</span></div>
-        <div class="date-row"><span class="day">Dimanche 20 décembre</span><span class="time">10h – 17h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-09-04">Vendredi 4 septembre</span><span class="time">19h – 00h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-09-20">Dimanche 20 septembre</span><span class="time">10h – 17h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-10-18">Dimanche 18 octobre</span><span class="time">10h – 17h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-11-27">Vendredi 27 novembre</span><span class="time">19h – 00h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-12-05">Samedi 5 décembre</span><span class="time">14h – 00h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-12-20">Dimanche 20 décembre</span><span class="time">10h – 17h</span></div>
       </div>
       <div class="schedule-col">
         <h3><span class="dot dot-b"></span> Bowling de Riorges</h3>
-        <div class="date-row"><span class="day">Vendredi 9 octobre</span><span class="time">19h – 00h</span></div>
-        <div class="date-row"><span class="day">Vendredi 6 novembre</span><span class="time">19h – 00h</span></div>
-        <div class="date-row"><span class="day">Vendredi 11 décembre</span><span class="time">19h – 00h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-10-09">Vendredi 9 octobre</span><span class="time">19h – 00h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-11-06">Vendredi 6 novembre</span><span class="time">19h – 00h</span></div>
+        <div class="date-row"><span class="day" data-date="2026-12-11">Vendredi 11 décembre</span><span class="time">19h – 00h</span></div>
       </div>
     </div>
   </div>
@@ -1082,17 +1087,17 @@
         <div class="tl-group-label">Il suffit d'être là</div>
         <div class="timeline">
           <div class="tl-item">
-            <div class="tl-date">12–13 septembre 2026 · 10h–18h</div>
+            <div class="tl-date" data-date="2026-09-12" data-end-date="2026-09-13">12–13 septembre 2026 · 10h–18h</div>
             <h4>Roanne Geek Convention</h4>
             <p>Au Scarabée. Les jeux à animer sont répartis à l'avance et peuvent s'apprendre sans stress.</p>
           </div>
           <div class="tl-item">
-            <div class="tl-date">4 octobre 2026 · 10h–18h</div>
+            <div class="tl-date" data-date="2026-10-04">4 octobre 2026 · 10h–18h</div>
             <h4>Je Joue à Mably</h4>
             <p>Au Cosec. Plus nous sommes disponibles, plus les présences se répartissent entre plusieurs personnes.</p>
           </div>
           <div class="tl-item">
-            <div class="tl-date">29 novembre 2026 · 10h–18h</div>
+            <div class="tl-date" data-date="2026-11-29">29 novembre 2026 · 10h–18h</div>
             <h4>Le FestiJeu</h4>
             <p>À Lentigny. Faites-nous connaître vos disponibilités dès maintenant.</p>
           </div>
@@ -1103,18 +1108,18 @@
         <div class="tl-group-label">Ça se prépare en amont</div>
         <div class="timeline">
           <div class="tl-item urgent">
-            <div class="tl-date">30–31 octobre 2026</div>
+            <div class="tl-date" data-date="2026-10-30" data-end-date="2026-10-31">30–31 octobre 2026</div>
             <h4>Halloween à La Doux</h4>
             <p>Saint-Denis-de-Cabanne. Notre priorité immédiate — un document dédié est à lire en priorité.</p>
             <span class="tl-flag">Besoin urgent de renfort</span>
           </div>
           <div class="tl-item">
-            <div class="tl-date">6–7 février 2027</div>
+            <div class="tl-date" data-date="2027-02-06" data-end-date="2027-02-07">6–7 février 2027</div>
             <h4>La Nuit dont Vous êtes le Héros</h4>
             <p>Roanne, salle du Diapason. Date posée, mais maintenue sous réserve de l'implication de chacun.</p>
           </div>
           <div class="tl-item">
-            <div class="tl-date">24–25 avril 2027</div>
+            <div class="tl-date" data-date="2027-04-24" data-end-date="2027-04-25">24–25 avril 2027</div>
             <h4>À Vous de Jouer !</h4>
             <p>Roanne, salle du Diapason. Comme pour février, le projet dépend de la mobilisation autour de l'association.</p>
           </div>
@@ -1209,6 +1214,22 @@
     <span>Saison 2026</span>
   </div>
 </footer>
+
+<script>
+  function barrerDatesPassees(){
+    const aujourdHui = new Date();
+    aujourdHui.setHours(0, 0, 0, 0);
+
+    document.querySelectorAll("[data-date]").forEach((element) => {
+      const dateFin = element.dataset.endDate || element.dataset.date;
+      const [annee, mois, jour] = dateFin.split("-").map(Number);
+      const date = new Date(annee, mois - 1, jour);
+      element.classList.toggle("is-past", date < aujourdHui);
+    });
+  }
+
+  barrerDatesPassees();
+</script>
 
 </body>
 </html>
