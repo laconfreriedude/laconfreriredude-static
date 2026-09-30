@@ -782,8 +782,12 @@
     color: var(--white-70);
     margin-bottom: 20px;
   }
-  .event-spotlight{
+  .event-spotlights{
+    display: grid;
+    gap: 24px;
     margin-top: 52px;
+  }
+  .event-spotlight{
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 0;
@@ -847,6 +851,17 @@
     font-size: 0.84rem;
     font-weight: 600;
     color: var(--white-70);
+  }
+  .event-spotlight.is-archive{
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+  }
+  .event-spotlight.is-archive .event-spotlight-kicker{
+    color: var(--white-70);
+  }
+  .event-spotlight.is-archive .event-spotlight-copy{
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
 
   /* ---------- JDR ---------- */
@@ -1225,20 +1240,37 @@
       </div>
     </div>
 
-    <figure class="event-spotlight">
-      <div class="event-spotlight-media">
-        <a href="https://www.roannegeek.fr/" target="_blank" rel="noopener noreferrer" aria-label="Visiter le site de Roanne Geek Convention">
-          <img src="images/roanne-geek-convention-2026.png" alt="L'espace de jeu animé par La Confrérie du Dé à la Roanne Geek Convention 2026" width="1600" height="1200" loading="lazy" decoding="async">
-        </a>
-      </div>
-      <figcaption class="event-spotlight-copy">
-        <div class="event-spotlight-kicker">Roanne Geek Convention</div>
-        <h3>Un vrai espace de jeu à faire vivre</h3>
-        <p>Pendant la convention, l'association a tenu un grand espace dédié aux parties, aux découvertes et aux échanges. C'est ce type de présence qui nous rend visibles et qui donne envie aux gens de s'asseoir jouer avec nous.</p>
-        <div class="event-spotlight-note">Scarabée, édition 2026</div>
-        <a class="btn btn-primary event-spotlight-link" href="https://www.roannegeek.fr/" target="_blank" rel="noopener noreferrer">Voir le site de la convention</a>
-      </figcaption>
-    </figure>
+    <div class="event-spotlights">
+      <figure class="event-spotlight">
+        <div class="event-spotlight-media">
+          <a href="https://www.helloasso.com/associations/la-confrerie-du-de" target="_blank" rel="noopener noreferrer" aria-label="Réserver pour Halloween 2026 avec La Confrérie du Dé">
+            <img src="images/halloween-2026.png" alt="Affiche Halloween 2026 de La Confrérie du Dé" width="601" height="844" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <figcaption class="event-spotlight-copy">
+          <div class="event-spotlight-kicker">A venir</div>
+          <h3>Halloween 2026 est désormais en ligne</h3>
+          <p>Le prochain grand rendez-vous approche. Retrouvez l'affiche directement sur le site et ouvrez la reservation HelloAsso pour bloquer votre place avant l'evenement.</p>
+          <div class="event-spotlight-note">31 octobre 2026 · Domaine de La Doux · Saint-Denis-de-Cabanne</div>
+          <a class="btn btn-primary event-spotlight-link" href="https://www.helloasso.com/associations/la-confrerie-du-de" target="_blank" rel="noopener noreferrer">Reserver sur HelloAsso</a>
+        </figcaption>
+      </figure>
+
+      <figure class="event-spotlight is-archive">
+        <div class="event-spotlight-media">
+          <a href="https://www.roannegeek.fr/" target="_blank" rel="noopener noreferrer" aria-label="Visiter le site de Roanne Geek Convention">
+            <img src="images/roanne-geek-convention-2026.png" alt="L'espace de jeu anime par La Confrerie du De a la Roanne Geek Convention 2026" width="1600" height="1200" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <figcaption class="event-spotlight-copy">
+          <div class="event-spotlight-kicker">Evenement passe</div>
+          <h3>Roanne Geek Convention reste un temps fort</h3>
+          <p>Pendant la convention, l'association a tenu un grand espace dedie aux parties, aux decouvertes et aux echanges. Ce souvenir recent reste visible sur le site, mais il est maintenant distingue des prochains rendez-vous.</p>
+          <div class="event-spotlight-note">Scarabee · edition 2026</div>
+          <a class="btn btn-ghost event-spotlight-link" href="https://www.roannegeek.fr/" target="_blank" rel="noopener noreferrer">Voir le site de la convention</a>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
