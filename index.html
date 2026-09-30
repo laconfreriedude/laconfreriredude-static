@@ -166,6 +166,10 @@
     line-height: 1.6;
   }
 
+  body.is-splash-locked{
+    overflow: hidden;
+  }
+
   h1,h2,h3{
     font-family: var(--font-display);
     margin: 0;
@@ -178,6 +182,90 @@
     max-width: var(--max-w);
     margin: 0 auto;
     padding: 0 28px;
+  }
+
+  /* ---------- SPLASH HALLOWEEN ---------- */
+  .splash-screen{
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background:
+      radial-gradient(circle at top, rgba(239,66,59,0.22) 0, transparent 38%),
+      rgba(0,0,0,0.94);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+  .splash-screen.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .splash-panel{
+    position: relative;
+    width: min(100%, 520px);
+    max-height: calc(100vh - 40px);
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+  }
+  .splash-art{
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 168px);
+    object-fit: contain;
+    border: 2px solid rgba(255,255,255,0.16);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    background: #180202;
+  }
+  .splash-actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .splash-enter,
+  .splash-skip{
+    cursor: pointer;
+  }
+  .splash-enter{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px 13px 24px;
+    min-width: 190px;
+  }
+  .splash-enter-arrow{
+    font-size: 0.95em;
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+  .splash-skip{
+    padding: 13px 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--white-line);
+    background: transparent;
+    color: var(--white-90);
+    font: inherit;
+    font-weight: 700;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
+  .splash-skip:hover,
+  .splash-skip:focus-visible{
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.32);
+    color: var(--white);
+  }
+  .splash-note{
+    margin: 0;
+    color: var(--white-70);
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   /* ---------- NAV ---------- */
@@ -952,7 +1040,18 @@
   }
 </style>
 </head>
-<body>
+<body class="is-splash-locked">
+
+<div class="splash-screen" id="halloween-splash" aria-hidden="true">
+  <div class="splash-panel">
+    <img class="splash-art" src="images/halloween-2026.png" alt="Affiche Halloween 2026 de La Confrérie du Dé" width="601" height="844" fetchpriority="high" decoding="async">
+    <div class="splash-actions">
+      <a class="btn btn-primary splash-enter" id="halloween-enter" href="https://www.helloasso.com/associations/la-confrerie-du-de" target="_blank" rel="noopener noreferrer">Réserver <span class="splash-enter-arrow" aria-hidden="true">↗</span></a>
+      <button class="splash-skip" type="button" id="halloween-skip" aria-label="Fermer l'affiche Halloween">Fermer</button>
+    </div>
+    <p class="splash-note">Échap, clic sur le fond ou fermeture du visuel pour continuer.</p>
+  </div>
+</div>
 
 <nav class="nav">
   <div class="nav-inner">
@@ -1216,6 +1315,38 @@
 </footer>
 
 <script>
+  function initialiserSplashHalloween(){
+    const splash = document.getElementById("halloween-splash");
+    const enterButton = document.getElementById("halloween-enter");
+    const skipButton = document.getElementById("halloween-skip");
+
+    if (!splash || !enterButton || !skipButton) {
+      document.body.classList.remove("is-splash-locked");
+      return;
+    }
+
+    const fermerSplash = () => {
+      splash.classList.add("is-hidden");
+      document.body.classList.remove("is-splash-locked");
+    };
+
+    splash.setAttribute("aria-hidden", "false");
+    enterButton.focus({ preventScroll: true });
+
+    enterButton.addEventListener("click", fermerSplash);
+    skipButton.addEventListener("click", fermerSplash);
+    splash.addEventListener("click", (event) => {
+      if (event.target === splash) {
+        fermerSplash();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !splash.classList.contains("is-hidden")) {
+        fermerSplash();
+      }
+    });
+  }
+
   function barrerDatesPassees(){
     const aujourdHui = new Date();
     aujourdHui.setHours(0, 0, 0, 0);
@@ -1228,6 +1359,7 @@
     });
   }
 
+  initialiserSplashHalloween();
   barrerDatesPassees();
 </script>
 
