@@ -1058,6 +1058,110 @@
     .nav-inner{ flex-direction: column; align-items: flex-start; }
   }
 
+  @media (max-width: 560px){
+    .wrap,
+    .nav-inner,
+    .hero-inner{
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    .splash-screen{ padding: 12px; }
+    .splash-panel{
+      gap: 14px;
+      max-height: calc(100vh - 24px);
+    }
+    .splash-art{ max-height: calc(100vh - 196px); }
+    .splash-actions{
+      width: 100%;
+      gap: 10px;
+    }
+    .splash-enter,
+    .splash-skip{
+      width: 100%;
+      justify-content: center;
+    }
+    .splash-note{ font-size: 0.84rem; }
+    .nav-mark{
+      font-size: 1rem;
+      white-space: normal;
+    }
+    .nav-links{ width: 100%; }
+    .nav-links li{ flex: 1 1 calc(50% - 6px); }
+    .nav-links a{
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 12px;
+    }
+    section{ padding: 64px 0; }
+    #agenda{ padding-top: 20px; }
+    .hero{ padding: 68px 0 72px; }
+    .hero h1{ font-size: clamp(2.2rem, 12vw, 3.2rem); }
+    .hero p.lede{
+      margin-top: 18px;
+      font-size: 1rem;
+    }
+    .hero-actions{
+      margin-top: 24px;
+      gap: 10px;
+    }
+    .hero-actions .btn{
+      width: 100%;
+      text-align: center;
+    }
+    .hero-actions .btn-discord{
+      width: 100%;
+      height: auto;
+      padding: 13px 24px;
+    }
+    .section-head{ margin-bottom: 34px; }
+    .venue-card,
+    .callout,
+    .event-spotlight-copy,
+    .jdr-card{
+      padding: 22px 18px;
+    }
+    .schedule{
+      margin-top: 42px;
+      gap: 24px;
+    }
+    .date-row{
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .callout{ margin-top: 42px; }
+    .timeline{
+      padding-left: 24px;
+      margin-top: 0;
+    }
+    .tl-item::before{ left: -31px; }
+    .event-spotlights{ margin-top: 40px; }
+    .event-spotlight-media{ min-height: 220px; }
+    .event-spotlight p{ max-width: none; }
+    .event-spotlight-link{
+      align-self: stretch;
+      text-align: center;
+    }
+    .cta{ padding: 72px 0; }
+    .cta .cta-actions,
+    .cta-social-row{
+      align-items: stretch;
+      gap: 10px;
+    }
+    .cta-social-intro{
+      width: 100%;
+      justify-content: center;
+      border-radius: var(--radius);
+    }
+    .cta .cta-actions .btn,
+    .cta-social-row .social-icon-link{
+      width: 100%;
+      justify-content: center;
+    }
+    footer{ padding: 28px 0 42px; }
+  }
+
   :focus-visible{
     outline: 2px solid var(--orange);
     outline-offset: 2px;

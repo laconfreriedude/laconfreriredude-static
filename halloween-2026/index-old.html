@@ -41,6 +41,20 @@ footer{margin:3rem 0 0;padding:2.5rem 0 3rem;text-align:center;border-top:3px do
 footer .big{font:900 1.8rem Impact,"Arial Black",sans-serif;color:var(--accent)}
 footer p{color:var(--muted)}
 .pause{margin:2rem 0 0;text-align:center;color:var(--muted);font-size:.95rem}
+@media (max-width:560px){
+  body{font-size:1rem;line-height:1.6}
+  .wrap{padding:0 1rem}
+  header{padding:3rem 0 2rem}
+  header .pumpkin{font-size:2.7rem}
+  h1{font-size:clamp(2rem,13vw,3rem)}
+  .when{font-size:1.08rem}
+  .ticket{display:block;width:100%;padding:.85rem 1rem}
+  section.act{margin:1.6rem 0;padding:1.2rem 1rem}
+  h2{font-size:1.45rem}
+  .badge{display:inline-block;margin:.45rem 0 0}
+  .sub{font-size:1.2rem;margin:2.2rem 0 -.4rem}
+  footer{padding:2.2rem 0 2.6rem}
+}
 @media (prefers-reduced-motion:no-preference){
   .pumpkin{animation:flick 3.5s ease-in-out infinite}
   @keyframes flick{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg) scale(1.06)}}
