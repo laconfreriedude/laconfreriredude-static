@@ -137,6 +137,9 @@ h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:3px;bac
 .card.paid{border-top-color:var(--red-mid)}
 .card.new{border-top-color:var(--purple)}
 .dark .card{background:rgba(255,255,255,.05);color:var(--white);border-color:var(--white-line-soft);border-top-color:var(--orange);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.card-media{margin:-26px -24px 18px;overflow:hidden;border-radius:0 0 var(--radius) var(--radius);border-bottom:1px solid var(--line-soft);background:#120707}
+.dark .card-media{border-bottom-color:var(--white-line-soft)}
+.card-media img{display:block;width:100%;height:300px;object-fit:cover}
 .card h3{font-weight:700;font-size:1.45rem;margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
 .chips li{font-size:.82rem;padding:4px 10px;border-radius:99px;background:var(--purple-soft);color:var(--purple);font-weight:600}
@@ -184,6 +187,8 @@ footer .footer-actions{margin-top:28px;display:flex;justify-content:center;gap:1
   .info{gap:8px}
   .info li{padding:8px 12px;font-size:.9rem}
   .card{padding:22px 18px}
+  .card-media{margin:-22px -18px 16px}
+  .card-media img{height:260px}
   .card h3{font-size:1.28rem}
   footer{padding:56px 0 104px}
   .reserve-float{left:12px;right:12px;bottom:12px;padding:13px 16px}
@@ -213,6 +218,7 @@ footer .footer-actions{margin-top:28px;display:flex;justify-content:center;gap:1
       <ul class="info">
         <li><strong>Samedi 31 Octobre de 14h à 00h</strong></li>
         <li>468 Chemin de la Doux, 42750 Saint-Denis-de-Cabanne</li>
+        <li>Besoins d'infos au : 06 28 40 28 53 ou laconfreriedude42@gmail.com</li>
       </ul>
     </div>
     <div class="die" aria-hidden="true">
@@ -291,6 +297,9 @@ footer .footer-actions{margin-top:28px;display:flex;justify-content:center;gap:1
     </div>
     <div class="grid">
       <article class="card paid">
+        <div class="card-media">
+          <img src="../images/ESCAPE_GAMEhalloween.png" alt="Visuel de l'Escape Game Halloween" width="1200" height="675">
+        </div>
         <h3>👻 Escape Game</h3>
         <ul class="chips"><li>Annexe abandonnée</li><li>30 à 45 min</li><li>14h – 00h</li><li class="pay">Supplément</li></ul>
         <p>L'activité historique de l'événement revient en version plus immersive : quelques énigmes, mais surtout beaucoup d'ambiance.</p>
@@ -298,6 +307,9 @@ footer .footer-actions{margin-top:28px;display:flex;justify-content:center;gap:1
         <p>Sessions courtes, intenses et effrayantes. Le détail du parcours reste secret.</p>
       </article>
       <article class="card new paid">
+        <div class="card-media">
+          <img src="../images/MURDERhalloween.png" alt="Visuel de la Murder Party Halloween" width="1200" height="675">
+        </div>
         <h3>🔪 La Murder Party <span class="badge">Nouveauté</span></h3>
         <ul class="chips"><li>Verrière</li><li>19h30 – 23h30</li><li>Repas inclus</li><li class="pay">Supplément</li></ul>
         <p>Un meurtre a été commis. Le coupable se cache parmi les personnages qui circulent autour de vous.</p>
