@@ -12,6 +12,11 @@ très contrasté, rehaussé d'orange, de rouge et de violet. La lecture alterne
 des sections **sur fond noir** (nav, hero, événements, CTA, footer) et des
 sections **sur fond blanc** (soirées, agenda, JDR) pour rythmer le parcours.
 
+L'accueil inclut actuellement un **écran d'ouverture événementiel** dédié à
+Halloween 2026 : une affiche plein écran bloque brièvement la page et propose
+un accès direct à la réservation HelloAsso avant de laisser l'utilisateur
+continuer vers le contenu principal.
+
 Chaque couleur de la charte s'exprime à deux niveaux :
 
 - en **accent décoratif** (tailles de texte importantes, pictogrammes, formes) ;
@@ -37,6 +42,8 @@ variables CSS (seul endroit à modifier si la palette évolue).
 | `--ink`           | `#101013`         | Texte principal sur fond blanc (meilleure lisibilité).       |
 | `--ink-soft`      | `#3F3F46`         | Texte secondaire sur fond blanc.                             |
 | `--ink-third`     | `#6B6B72`         | Texte tertiaire / lieux / notes.                             |
+| `--line-faint`    | `rgba(16,16,19,.08)` | Liserés légers sur cartes et cadres de logos.            |
+| `--white-90`      | blanc translucide | Texte quasi principal sur fonds sombres / CTA sociale.       |
 | `--white-80/70`   | blanc translucide | Texte secondaire/tertiaire sur fonds sombres.                |
 | `--line-soft`     | `rgba(16,16,19,.14)` | Séparateurs sur fond blanc.                              |
 | `--white-line(-soft)` | blanc translucide | Bordures sur fonds sombres.                            |
@@ -70,10 +77,12 @@ Règles d'usage :
 
 - Source : `doc/La Confrerie du De_Logotype_RVB/`, déclinaison
   **White_Round** (dé blanc à points rouges).
-- Copie d'exploitation : `images/logo_confrerie_blanc.png`.
-- Usages : mark de la nav (30×30) et visuel animé du hero. Sur les fonds clairs,
-  seule la variante **noire** du logo doit être utilisée ; la variante blanche
-  est réservée aux fonds sombres.
+- Copies d'exploitation : `images/logo_confrerie_blanc.png` pour les fonds
+  sombres, `images/logo_confrerie_noir.png` pour le hero sur fond noir, et
+  `images/logo.png` pour le favicon / les métadonnées sociales.
+- Usages : mark de la nav (30×30), visuel animé du hero et icône du site.
+  Sur les fonds clairs, seule la variante **noire** du logo doit être
+  utilisée ; la variante blanche est réservée aux fonds sombres.
 - Le logo des partenaires est fourni en `images/` (logos clampés dans des
   cadres blancs de 96px / 108px).
 
@@ -85,6 +94,10 @@ Règles d'usage :
   (sur-ligne), `h2` très gras avec une **barre de 3px sous le titre**
   (rouge sur fond clair, orange sur fond sombre), puis un paragraphe
   d'introduction.
+- Une **splash screen** peut précéder la navigation principale pour pousser un
+  événement prioritaire. Elle reste centrée, bloque le scroll via
+  `body.is-splash-locked` et se ferme par bouton, clic sur le fond ou touche
+  `Escape`.
 - Rythme clair/sombre :
   - **Sombre** (noir) : nav, hero, « Événements », CTA, footer.
   - **Clair** (blanc) : « Soirées », « Agenda », « Jeu de rôle ».
@@ -97,21 +110,22 @@ Règles d'usage :
 
 | Composant        | Description                                                               |
 | ---------------- | ------------------------------------------------------------------------- |
+| Splash Halloween | Affiche plein écran sur fond noir, CTA HelloAsso + bouton de fermeture.   |
 | Nav              | Sticky, fond noir, mark logo + mot, liens en pilules bordées.             |
-| Hero             | Fond noir, motif de points, halos orange/violet, titre 900, dé à lancer  |
-|                  | (animation `dieRoll` 8,5 s, masquée si « reduce-motion »).               |
+| Hero             | Fond noir sans cadrillage de points, halos orange/violet, titre 900,     |
+|                  | visuel principal animé selon le contexte (masqué si « reduce-motion »).   |
 | Boutons          | Primaire rouge `--red-mid` (hover `--red-deep`), ghost sur fond sombre,  |
-|                  | outline violet sur fond clair (hover élévation).                          |
+|                  | outline violet sur fond clair, bouton Discord dédié, hover avec élévation.|
 | Cartes de salles | Tuile blanche, bord supérieur 4px coloré par **statut** :                |
 |                  | actif = `--red-mid`, nouveau = `--purple`, pause = `--ink-third`.        |
 | Agenda           | Deux colonnes (Dream Team / Bowling) avec points `--red-mid` / `--purple`,|
-|                  | horaires en `tabular-nums`.                                               |
+|                  | horaires en `tabular-nums`, dates passées barrées automatiquement.        |
 | Callout          | Panneau noir « On cherche des volontaires », puces `◆` orange.           |
 | Timeline         | Fil noir sur fond sombre, pastilles orange, puce rouge si **urgent**;    |
 |                  | badge d'urgence rouge.                                                    |
 | Spotlight        | Carte événement photo/copy, zoom photo au survol (respecte reduce-motion).|
 | JDR              | Colonne texte + carte violette en pointillés (`border dashed`).          |
-| CTA / footer     | Fonds noirs, chips en pilules, icônes sociales colorées (Facebook/Discord).|
+| CTA / footer     | Fonds noirs, chips en pilules, intro sociale animée, icônes Facebook/Discord.|
 
 ## 7. Accessibilité
 
@@ -121,24 +135,30 @@ Règles d'usage :
 - **Focus visible** : `:focus-visible` = contour orange 2px + offset 2px,
   appliqué globalement.
 - **Mouvement** : `prefers-reduced-motion: reduce` coupe le défilement fluide
-  et toutes les animations/transitions.
+  et toutes les animations/transitions, y compris le dé du hero, le zoom des
+  visuels et l'intro sociale animée.
 - **Liens externes** : `target="_blank" rel="noopener"`, avec `aria-label`
   sur les boutons icônes (Facebook, Discord).
 - **Images** : `alt` explicites ; SVG décoratifs `aria-hidden="true"`.
+- **Overlay événementiel** : fermeture possible au clavier (`Escape`) et focus
+  initial dirigé vers l'action principale.
 
 ## 8. Maintenance courante
 
 - **Changer une couleur** → éditer les variables dans `:root` (unique point
-  d'entrée, ex. ligne 60–91).
+  d'entrée dans `index.html`).
 - **Ajouter une date de soirée** → nouvelle ligne `.date-row` dans la colonne
-  correspondante de la section « agenda ».
+  correspondante de la section « agenda », avec l'attribut `data-date`
+  (`YYYY-MM-DD`) pour que le barré automatique fonctionne.
 - **Ajouter un lieu partenaire** → nouvelle `.venue-card` avec image, badge et
   la classe `status-active` / `status-new` / `status-pause`.
 - **Ajouter un événement** → nouveau `.tl-item` dans la colonne « Il suffit
   d'être là » ou « Ça se prépare en amont » ; classe `urgent` si priorité.
-- **Modifier le logo** → remplacer `images/logo_confrerie_blanc.png` (blanc
-  pour fonds sombres) ; penser à fournir l'équivalent noir pour les fonds
-  clairs.
+- **Mettre à jour le splash événementiel** → remplacer `images/halloween-2026.png`
+  et ajuster les liens `#halloween-enter` / la spotlight si la campagne change.
+- **Modifier le logo** → remplacer `images/logo_confrerie_blanc.png` (nav),
+  `images/logo_confrerie_noir.png` (hero) et `images/logo.png` (favicon / OG)
+  selon le besoin.
 - **Polices** → déposer les fichiers dans `fonts/Acumin/` et `fonts/Auster/`
   avec les noms attendus par les `@font-face`.
 
@@ -147,7 +167,9 @@ Règles d'usage :
 - Site **statique mono-fichier** (une seule page, `index.html`), CSS embarqué,
   aucune dépendance externe (les polices Google ont été retirées au profit des
   fichiers locaux).
-- Pas de JavaScript requis pour le rendu ; les SVG sont inline.
+- Un **JavaScript minimal inline** pilote deux comportements : fermeture de la
+  splash screen Halloween et barré automatique des dates passées via
+  `data-date` / `data-end-date`.
+- Les SVG sont inline.
 - Le déroulement des sections fonctionne via ancres natives (`#soirees`,
-  `#agenda`, `#evenements`, `#jdr`, `#rejoindre`) — coffre aussi le menu de la
-  nav.
+  `#agenda`, `#evenements`, `#jdr`, `#rejoindre`), comme le menu de la nav.
