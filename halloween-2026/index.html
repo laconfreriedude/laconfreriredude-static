@@ -321,11 +321,22 @@ footer .footer-actions{margin-top:28px;display:flex;justify-content:center;gap:1
 <footer>
   <div class="wrap" id="tarifs">
     <h2>Venez costumés, venez nombreux</h2>
+    <iframe id="haWidget" title="Widget de reservation HelloAsso pour Halloween a La Doux" allow="payment 'self' https://paymenthub.helloassopay.com/ https://helloasso.com/" src="https://www.helloasso.com/associations/la-confrerie-du-de/evenements/halloween-a-la-doux-1/widget" style="width:100%;height:750px;border:none;"></iframe>
     <div class="footer-actions">
       <a class="btn btn-ghost" href="index.html#top">Retour en haut de la page</a>
     </div>
   </div>
 </footer>
+
+<script>
+window.addEventListener('message', function (e) {
+  const dataHeight = e.data.height;
+  const haWidgetElement = document.getElementById('haWidget');
+  if (dataHeight > parseFloat(haWidgetElement.height || 0)) {
+    haWidgetElement.height = dataHeight + 'px';
+  }
+});
+</script>
 
 <a class="reserve-float" href="https://www.helloasso.com/associations/la-confrerie-du-de" target="_blank" rel="noopener noreferrer" aria-label="Réserver pour Halloween 2026 sur HelloAsso">
   Réserver
