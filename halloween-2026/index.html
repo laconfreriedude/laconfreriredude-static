@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halloween à La Doux – La Confrérie du Dé</title>
+<style>
+@font-face{
+  font-family:'Auster';
+  font-style:normal;
+  font-weight:400;
+  src:url("../fonts/Auster/Auster Regular.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:'Auster';
+  font-style:normal;
+  font-weight:600;
+  src:url("../fonts/Auster/Auster SemiBold.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:'Auster';
+  font-style:normal;
+  font-weight:700;
+  src:url("../fonts/Auster/Auster Bold.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:'Auster';
+  font-style:normal;
+  font-weight:900;
+  src:url("../fonts/Auster/Auster Black.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:'Acumin Pro';
+  font-style:normal;
+  font-weight:400;
+  src:url("../fonts/Acumin/Acumin Pro Regular.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:'Acumin Pro';
+  font-style:normal;
+  font-weight:600;
+  src:url("../fonts/Acumin/Acumin Pro Semibold.ttf") format("truetype");
+  font-display:swap;
+}
+@font-face{
+  font-family:'Acumin Pro';
+  font-style:normal;
+  font-weight:700;
+  src:url("../fonts/Acumin/Acumin Pro Bold.ttf") format("truetype");
+  font-display:swap;
+}
+
+:root{
+  --black:#000;
+  --white:#fff;
+  --paper:#fff;
+  --orange:#F7964B;
+  --red:#EF423B;
+  --red-bright:#FF7068;
+  --red-mid:#C92B25;
+  --red-deep:#B01F1A;
+  --purple:#591F60;
+  --purple-soft:rgba(89,31,96,.09);
+  --ink:#101013;
+  --ink-soft:#3F3F46;
+  --ink-third:#6B6B72;
+  --line-soft:rgba(16,16,19,.14);
+  --line-faint:rgba(16,16,19,.08);
+  --white-90:rgba(255,255,255,.92);
+  --white-80:rgba(255,255,255,.8);
+  --white-70:rgba(255,255,255,.66);
+  --white-line:rgba(255,255,255,.18);
+  --white-line-soft:rgba(255,255,255,.1);
+  --radius:4px;
+  --max-w:1080px;
+  --font-display:'Auster','Trebuchet MS','Segoe UI',Tahoma,sans-serif;
+  --font-body:'Acumin Pro','Segoe UI',Tahoma,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.05rem/1.6 var(--font-body)}
+h1,h2,h3{font-family:var(--font-display);line-height:1.12;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 28px}
+.dark{background:var(--black);color:var(--white)}
+section{padding:84px 0}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--black);border-bottom:1px solid var(--white-line-soft)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--max-w);margin:0 auto;padding:10px 28px;flex-wrap:wrap}
+.nav-mark{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;font-family:var(--font-display);font-size:1.08rem;font-weight:700;letter-spacing:.01em;white-space:nowrap}
+.nav-mark img{display:block;width:30px;height:30px;object-fit:contain}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.nav-links a{display:inline-block;text-decoration:none;color:var(--white-90);font-size:.92rem;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--white-line);transition:color .18s ease,border-color .18s ease,background .18s ease}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--orange);border-color:rgba(247,150,75,.55);background:rgba(247,150,75,.08)}
+
+.hero{position:relative;overflow:hidden;padding:96px 0 88px;
+  background:radial-gradient(circle at 20% 22%,rgba(247,150,75,.14) 0,transparent 42%),radial-gradient(circle at 84% 74%,rgba(89,31,96,.55) 0,transparent 46%),
+  #000}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
+.section-tag{display:inline-block;font-size:.86rem;font-weight:700;color:var(--orange);margin-bottom:14px}
+.light .section-tag{color:var(--red-mid)}
+h1{font-weight:900;font-size:clamp(2.6rem,7vw,4.6rem)}
+.hero p.lead{color:var(--white-80);max-width:520px;margin:20px 0}
+.hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.info{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+.info li{padding:8px 16px;border:1px solid var(--white-line);border-radius:99px;font-size:.95rem;color:var(--white-80)}
+.info li strong{color:var(--orange)}
+.die{width:min(340px,100%);justify-self:center}
+.die img{width:100%;height:auto;display:block;object-fit:contain;border:2px solid rgba(255,255,255,.16);box-shadow:0 24px 60px rgba(0,0,0,.45);background:#180202}
+
+.btn{display:inline-block;padding:13px 24px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:1rem;font-family:var(--font-body);border:1.5px solid transparent;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease}
+.btn-primary{background:var(--red-mid);color:var(--white)}
+.btn-primary:hover,.btn-primary:focus-visible{background:var(--red-deep)}
+.btn-ghost{border-color:var(--white-line);color:var(--white)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.32)}
+.btn-outline-dark{border-color:var(--purple);color:var(--purple);background:transparent;box-shadow:0 0 0 rgba(16,16,19,0);transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.btn-outline-dark:hover,.btn-outline-dark:focus-visible{background:var(--purple-soft);box-shadow:0 8px 18px rgba(16,16,19,.08);transform:translateY(-2px)}
+.reserve-float{position:fixed;right:20px;bottom:20px;z-index:30;display:inline-flex;align-items:center;gap:10px;padding:14px 18px 14px 20px;border-radius:999px;background:var(--red-mid);color:var(--white);text-decoration:none;font-weight:700;box-shadow:0 18px 36px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.08);transition:background .18s ease,transform .18s ease,box-shadow .18s ease}
+.reserve-float:hover,.reserve-float:focus-visible{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 22px 44px rgba(0,0,0,.32),0 0 0 1px rgba(255,255,255,.12)}
+.reserve-float .arrow{font-size:.95em;line-height:1;transform:translateY(-1px)}
+
+.section-head{margin-bottom:40px;max-width:640px}
+h2{font-weight:900;font-size:clamp(1.9rem,4vw,2.6rem);padding-bottom:12px;position:relative}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:3px;background:var(--red-mid)}
+.dark h2::after{background:var(--orange)}
+.section-head p{color:var(--ink-soft);margin:16px 0 0}
+.dark .section-head p{color:var(--white-80)}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--white);color:var(--ink);border:1px solid var(--line-soft);border-top:4px solid var(--ink-third);border-radius:var(--radius);padding:26px 24px;box-shadow:0 6px 20px rgba(16,16,19,.05)}
+.card.paid{border-top-color:var(--red-mid)}
+.card.new{border-top-color:var(--purple)}
+.dark .card{background:rgba(255,255,255,.05);color:var(--white);border-color:var(--white-line-soft);border-top-color:var(--orange);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.card h3{font-weight:700;font-size:1.45rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
+.chips li{font-size:.82rem;padding:4px 10px;border-radius:99px;background:var(--purple-soft);color:var(--purple);font-weight:600}
+.dark .chips li{background:rgba(255,255,255,.08);color:var(--white-80)}
+.chips li.pay{background:var(--red-mid);color:var(--white)}
+.chips li.free{background:transparent;border:1px solid currentColor;color:var(--ink-soft)}
+.dark .chips li.free{color:var(--orange)}
+.badge{display:inline-block;margin-left:8px;padding:3px 10px;border-radius:99px;background:var(--purple);color:var(--white);font:700 .75rem var(--font-body);vertical-align:middle}
+.card p{margin:.6rem 0;color:var(--ink-soft)}
+.dark .card p{color:var(--white-80)}
+.card ul.pts{margin:.6rem 0 0;padding:0;list-style:none}
+.card ul.pts li{position:relative;padding-left:22px;margin:.45rem 0;color:var(--ink-soft)}
+.dark .card ul.pts li{color:var(--white-80)}
+.card ul.pts li::before{content:"◆";position:absolute;left:0;color:var(--red-mid);font-size:.8rem;top:.2rem}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;font-size:.9rem;color:var(--ink-soft)}
+.legend span::before{content:"";display:inline-block;width:18px;height:4px;margin-right:8px;vertical-align:middle;border-radius:2px;background:var(--c)}
+.single{max-width:520px}
+
+footer{background:var(--black);color:var(--white);padding:64px 0 48px;text-align:center;border-top:1px solid var(--white-line-soft)}
+footer h2{display:inline-block;font-size:clamp(1.6rem,4vw,2.2rem)}
+footer h2::after{left:50%;transform:translateX(-50%)}
+footer p{color:var(--white-70);margin:18px 0 0}
+footer .heart{color:var(--red);font-size:1.6rem}
+footer .footer-actions{margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  section{padding:60px 0}
+  .hero .wrap,.grid{grid-template-columns:1fr}
+  .die{display:none}
+  .nav-inner{flex-direction:column;align-items:flex-start}
+  .reserve-float{left:16px;right:16px;bottom:16px;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top" aria-label="La Confrérie du Dé – Halloween">
+      <img src="../images/logo_confrerie_blanc.png" alt="Logo de La Confrérie du Dé" width="30" height="30">
+      La Confrérie du Dé
+    </a>
+    <ul class="nav-links">
+      <li><a href="#frissons">Frissons</a></li>
+      <li><a href="#tous">Pour tous</a></li>
+      <li><a href="#enfants">Enfants</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero dark" id="top">
+  <div class="wrap">
+    <div>
+      <span class="section-tag">Samedi 31 octobre</span>
+      <h1>Halloween à La Doux</h1>
+      <p class="lead">Pour la 3e année, Daniel et Sophie nous ouvrent leur domaine pour une journée et une nuit d'horreur. Cinq activités, des frissons aux jeux de société, sur une seule journée.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.helloasso.com/associations/la-confrerie-du-de" target="_blank" rel="noopener noreferrer">Réserver ↗</a>
+        <a class="btn btn-ghost" href="#frissons">Voir les activités</a>
+        <a class="btn btn-ghost" href="#enfants">Programme enfants</a>
+      </div>
+      <ul class="info">
+        <li><strong>14h – 1h</strong></li>
+        <li>468 Chemin de la Doux, 42750 Saint-Denis-de-Cabanne</li>
+        <li>Billet d'entrée : <strong>presque tout est inclus</strong></li>
+      </ul>
+    </div>
+    <div class="die" aria-hidden="true">
+      <img src="../images/halloween-2026.png" alt="Affiche Halloween 2026 de La Confrérie du Dé" width="601" height="844">
+    </div>
+  </div>
+</header>
+
+<section class="light" id="frissons">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">En supplément du billet</span>
+      <h2>Pour les amateurs de frissons</h2>
+      <p>Deux expériences immersives, à vivre en petit groupe. Le Train fantôme et la Murder Party sont les seules activités payantes en plus de l'entrée.</p>
+    </div>
+    <div class="grid">
+      <article class="card paid">
+        <h3>👻 Le Train fantôme</h3>
+        <ul class="chips"><li>Annexe abandonnée</li><li>30 à 45 min</li><li>14h – 1h</li><li class="pay">Supplément</li></ul>
+        <p>L'activité historique de l'événement revient en version plus immersive : quelques énigmes, mais surtout beaucoup d'ambiance.</p>
+        <p>Vous traversez <strong>quatre pièces à l'étage</strong> d'une annexe délabrée, entre pénombre, fumée, araignées et bruits inquiétants. Un tenancier de vidéoclub vous accueille et vous explique les règles.</p>
+        <p>Sessions courtes, intenses et effrayantes. Le détail du parcours reste secret.</p>
+      </article>
+      <article class="card new paid">
+        <h3>🔪 La Murder Party <span class="badge">Nouveauté</span></h3>
+        <ul class="chips"><li>Verrière</li><li>19h30 – 23h30</li><li>Repas inclus</li><li class="pay">Supplément</li></ul>
+        <p>Un meurtre a été commis. Le coupable se cache parmi les personnages qui circulent autour de vous.</p>
+        <ul class="pts">
+          <li>Vous jouez en <strong>équipes de 4</strong>, à l'une des 4 à 5 tables.</li>
+          <li>Le repas (apéritif, entrée, plat, fromage, dessert…) fait avancer l'enquête.</li>
+          <li>Interrogez les personnages quand ils passent à votre table.</li>
+          <li>Consultez documents, photos et indices auprès du <strong>commissaire</strong>, sans les emporter.</li>
+          <li>Recoupez les indices et défendez votre théorie.</li>
+        </ul>
+      </article>
+    </div>
+    <div class="legend">
+      <span style="--c:var(--red-mid)">En supplément</span>
+      <span style="--c:var(--purple)">Nouveauté</span>
+      <span style="--c:var(--ink-third)">Inclus dans le billet</span>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="tous">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Inclus dans le billet</span>
+      <h2>Pour tous, toute la journée</h2>
+      <p>Des activités plus calmes, à rejoindre quand vous voulez entre deux frayeurs.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>🎲 Les jeux de société</h3>
+        <ul class="chips"><li>Grange</li><li>14h – 21h</li><li class="free">Inclus</li></ul>
+        <p>Jouez en famille ou entre amis, avec des animateurs pour vous guider. La sélection est orientée <strong>horreur, monstres et Halloween</strong>, avec aussi des jeux plus classiques pour ceux qui préfèrent éviter les fantômes.</p>
+      </article>
+      <article class="card">
+        <h3>🎭 Le jeu de rôle</h3>
+        <ul class="chips"><li>Salle annexe</li><li>Créneaux entre 14h et 1h</li><li class="free">Inclus</li></ul>
+        <p>Une table de jeu de rôle, proposée sur plusieurs créneaux, avec éventuellement une session pour les enfants. Le planning sera communiqué plus tard.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="enfants">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">De 4 à 12 ans</span>
+      <h2>Pour les petits monstres</h2>
+    </div>
+    <article class="card single">
+      <h3>🧭 Le Cluedo géant</h3>
+      <ul class="chips"><li>Jardin, si le temps le permet</li><li>14h30 – 16h</li><li class="free">Inclus</li></ul>
+      <p>Une enquête grandeur nature où les enfants mènent le jeu, accompagnés de petits monstres déguisés. Un peu de frisson, mais surtout beaucoup de fun.</p>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Venez costumés, venez nombreux</h2>
+    <p>Prix des billets et réservations : à venir.</p>
+    <div class="footer-actions">
+      <a class="btn btn-ghost" href="../index.html#evenements">Retour au site principal</a>
+    </div>
+  </div>
+</footer>
+
+<a class="reserve-float" href="https://www.helloasso.com/associations/la-confrerie-du-de" target="_blank" rel="noopener noreferrer" aria-label="Réserver pour Halloween 2026 sur HelloAsso">
+  Réserver
+  <span class="arrow" aria-hidden="true">↗</span>
+</a>
+
+</body>
+</html>

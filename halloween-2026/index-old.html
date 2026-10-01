@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halloween à La Doux – 31 octobre</title>
+<style>
+:root{
+  --bg:#17101a; --card:#241829; --ink:#f3e9dc; --muted:#b9a8bd; --accent:#ff7a1a; --blood:#c4283c; --line:#3a2842;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#fbf3e8;--card:#fffaf2;--ink:#2a1630;--muted:#6d5a73;--accent:#d85a00;--blood:#a31d30;--line:#e6d5bf}
+}
+:root[data-theme="light"]{--bg:#fbf3e8;--card:#fffaf2;--ink:#2a1630;--muted:#6d5a73;--accent:#d85a00;--blood:#a31d30;--line:#e6d5bf}
+:root[data-theme="dark"]{--bg:#17101a;--card:#241829;--ink:#f3e9dc;--muted:#b9a8bd;--accent:#ff7a1a;--blood:#c4283c;--line:#3a2842}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.05rem/1.65 Georgia,"Times New Roman",serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.25rem}
+header{padding:4rem 0 2.5rem;text-align:center;border-bottom:3px double var(--line)}
+header .pumpkin{font-size:3.2rem;line-height:1}
+h1{font:900 clamp(2.4rem,9vw,4.2rem)/1.02 Impact,"Arial Black",sans-serif;letter-spacing:.01em;margin:.6rem 0 .4rem;color:var(--accent);text-shadow:3px 3px 0 var(--blood)}
+.when{font-size:1.25rem;margin:.2rem 0}
+.where{color:var(--muted);margin:.2rem 0 1.4rem;font-size:.95rem}
+.intro{max-width:560px;margin:0 auto}
+.ticket{display:inline-block;margin-top:1.4rem;padding:.7rem 1.1rem;border:2px dashed var(--accent);border-radius:6px;font-size:.98rem}
+section.act{margin:2.2rem 0;padding:1.5rem 1.4rem;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:4px}
+section.act.new{border-left-color:var(--blood)}
+h2{font:700 1.7rem/1.2 Georgia,serif;margin:0 0 .4rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem;padding:0;list-style:none}
+.meta li{font:.85rem/1 system-ui,sans-serif;padding:.4rem .65rem;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.meta li.paid{border-color:var(--blood);color:var(--blood);font-weight:600}
+.meta li.free{border-color:var(--accent);color:var(--accent);font-weight:600}
+.badge{font:700 .8rem system-ui,sans-serif;background:var(--blood);color:#fff;padding:.25rem .6rem;border-radius:3px;vertical-align:middle;margin-left:.5rem}
+p{margin:.6rem 0}
+ul.pts{padding-left:1.2rem;margin:.6rem 0}
+ul.pts li{margin:.35rem 0}
+.sub{font-size:1.4rem;margin:3rem 0 -.8rem;text-align:center;color:var(--muted);font-style:italic}
+footer{margin:3rem 0 0;padding:2.5rem 0 3rem;text-align:center;border-top:3px double var(--line)}
+footer .big{font:900 1.8rem Impact,"Arial Black",sans-serif;color:var(--accent)}
+footer p{color:var(--muted)}
+.pause{margin:2rem 0 0;text-align:center;color:var(--muted);font-size:.95rem}
+@media (prefers-reduced-motion:no-preference){
+  .pumpkin{animation:flick 3.5s ease-in-out infinite}
+  @keyframes flick{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg) scale(1.06)}}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="pumpkin" aria-hidden="true">🎃</div>
+    <h1>Halloween à La Doux</h1>
+    <p class="when"><strong>Samedi 31 octobre, de 14h à 1h</strong></p>
+    <p class="where">Domaine de La Doux · 468 Chemin de la Doux, 42750 Saint-Denis-de-Cabanne</p>
+    <p class="intro">Pour la 3e année, Daniel et Sophie nous ouvrent leur domaine pour une journée et une nuit placées sous le signe de l'horreur. Cette année, tout se passe en <strong>une seule journée</strong>. Cinq activités vous attendent, des frissons aux jeux de société.</p>
+    <div class="ticket">🎟️ La plupart des activités sont <strong>incluses dans le billet d'entrée</strong>.<br>Seuls le Train fantôme et la Murder Party sont en supplément.</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="sub">Pour les amateurs de frissons</p>
+
+  <section class="act">
+    <h2>👻 Le Train fantôme</h2>
+    <ul class="meta">
+      <li>Annexe abandonnée</li><li>Sessions de 30 à 45 min</li><li>14h – 1h</li><li class="paid">En supplément</li>
+    </ul>
+    <p>L'activité historique de l'événement revient en version plus immersive. Quelques énigmes, mais surtout beaucoup d'ambiance : vous traversez <strong>quatre pièces à l'étage</strong> d'une annexe délabrée, entre pénombre, fumée, araignées et bruits inquiétants.</p>
+    <p>Un tenancier de vidéoclub vous accueille et vous explique les règles. Les sessions sont courtes, intenses et effrayantes. Le détail du parcours reste secret, pour ne pas gâcher la surprise.</p>
+  </section>
+
+  <section class="act new">
+    <h2>🔪 La Murder Party <span class="badge">Nouveauté</span></h2>
+    <ul class="meta">
+      <li>Verrière</li><li>19h30 – 23h30</li><li>Repas inclus</li><li class="paid">En supplément</li>
+    </ul>
+    <p>Un meurtre a été commis. Parmi les personnages qui circulent autour de vous se cache le coupable : à vous de le démasquer.</p>
+    <ul class="pts">
+      <li>Vous jouez en <strong>équipes de 4</strong>, installés autour de 4 à 5 tables.</li>
+      <li>Le repas (apéritif, entrée, plat, fromage, dessert…) fait partie du jeu : chaque service fait avancer l'enquête.</li>
+      <li>Les personnages passent de table en table et vous pouvez les interroger.</li>
+      <li>Documents, photos et indices se consultent auprès du <strong>commissaire</strong>, mais ne peuvent pas être emportés à votre table.</li>
+      <li>Recoupez les indices et défendez votre théorie !</li>
+    </ul>
+  </section>
+
+  <p class="sub">Pour tous, toute la journée</p>
+
+  <section class="act">
+    <h2>🎲 Les jeux de société</h2>
+    <ul class="meta">
+      <li>Grange</li><li>14h – 21h</li><li class="free">Inclus</li>
+    </ul>
+    <p>Jouez en famille ou entre amis, avec des animateurs pour vous guider. La sélection est orientée <strong>horreur, monstres et Halloween</strong>. Des jeux plus classiques sont aussi disponibles pour ceux qui préfèrent éviter les fantômes.</p>
+  </section>
+
+  <section class="act">
+    <h2>🎭 Le jeu de rôle</h2>
+    <ul class="meta">
+      <li>Salle annexe</li><li>Créneaux entre 14h et 1h</li><li class="free">Inclus</li>
+    </ul>
+    <p>Une table de jeu de rôle est proposée sur plusieurs créneaux, avec éventuellement une session pour les enfants. Le planning sera communiqué plus tard.</p>
+  </section>
+
+  <p class="sub">Pour les petits monstres</p>
+
+  <section class="act">
+    <h2>🧭 Le Cluedo géant</h2>
+    <ul class="meta">
+      <li>Jardin (si le temps le permet)</li><li>14h30 – 16h</li><li>Enfants de 4 à 12 ans</li><li class="free">Inclus</li>
+    </ul>
+    <p>Une enquête grandeur nature où les enfants mènent le jeu, accompagnés de petits monstres déguisés. Un peu de frisson, mais surtout beaucoup de fun.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Venez costumés, venez nombreux 🎃</div>
+    <p>Prix des billets et réservations : à venir.</p>
+  </div>
+</footer>
+</body>
+</html>
