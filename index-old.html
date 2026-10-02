@@ -687,6 +687,50 @@
     opacity: 0.65;
   }
 
+  /* ---------- CALLOUT ---------- */
+  .callout{
+    margin-top: 56px;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--white-line-soft);
+    border-radius: var(--radius);
+    padding: 34px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .callout h3{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .callout ul{
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .callout li{
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--white-80);
+  }
+  .callout li::before{
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-size: 0.66rem;
+    top: 6px;
+  }
+  .callout p.note{
+    font-size: 0.92rem;
+    color: var(--white-70);
+    margin-top: 16px;
+  }
+
   /* ---------- TIMELINE (events) ---------- */
   .timeline{
     position: relative;
@@ -752,6 +796,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     margin-top: 48px;
+  }
+  .tl-group-label{
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--white-70);
+    margin-bottom: 20px;
   }
   .event-spotlights{
     display: grid;
@@ -965,13 +1015,6 @@
   .social-icon-link:focus-visible{
     background: #1664D9;
   }
-  .social-icon-link-whatsapp{
-    background: #25D366;
-  }
-  .social-icon-link-whatsapp:hover,
-  .social-icon-link-whatsapp:focus-visible{
-    background: #1FAE54;
-  }
   .social-icon-link svg{
     width: 22px;
     height: 22px;
@@ -1018,6 +1061,7 @@
     .die{ display: none; }
     .venues{ grid-template-columns: 1fr; }
     .schedule{ grid-template-columns: 1fr; gap: 32px; }
+    .callout{ grid-template-columns: 1fr; }
     .timeline-groups{ grid-template-columns: 1fr; gap: 8px; }
     .event-spotlight{ grid-template-columns: 1fr; }
     .event-spotlight-media{ min-height: 240px; }
@@ -1083,6 +1127,7 @@
     }
     .section-head{ margin-bottom: 34px; }
     .venue-card,
+    .callout,
     .event-spotlight-copy,
     .jdr-card{
       padding: 22px 18px;
@@ -1096,6 +1141,7 @@
       flex-direction: column;
       gap: 4px;
     }
+    .callout{ margin-top: 42px; }
     .timeline{
       padding-left: 24px;
       margin-top: 0;
@@ -1193,54 +1239,60 @@
   <div class="wrap">
     <div class="section-head">
       <div class="section-tag">Soirées Jeux</div>
-      <h2>Des jeux pour tous les goûts</h2>
-      <p>Tout au long de l’année, nous organisons des temps jeux de société, en soirée comme en journée.
-Jeux d’ambiance, jeux familiaux, jeux experts, jeux narratifs… notre collection permet de varier les plaisirs et de découvrir régulièrement de nouveaux univers.
-Pas besoin de connaître les règles ou d’avoir une grande ludothèque à la maison. Nos membres sont là pour expliquer, jouer et partager leurs coups de cœur.
-Et bien sûr, vous pouvez aussi ramener vos propres jeux pour les faire découvrir aux autres !
-C’est même l’occasion parfaite de ressortir ces jeux qui prennent la poussière sur une étagère et de leur offrir enfin une nouvelle partie.</p>
-      <div class="section-actions">
-        <a class="btn btn-outline-dark" href="https://docs.google.com/spreadsheets/d/1BvUOZPiRrjrKBOGCacfgDTdvXa7WrplkR8T-eJ44Kj8/edit?usp=sharing" target="_blank" rel="noopener">Voir la liste des jeux</a>
-      </div>
-      <p>Nos soirées jeux peuvent avoir lieu dans 4 endroits différents : le Dream Team 42, le Bowling, le Laser &amp; Beer et l'Amicale Laïque. </p>
+      <h2>Quatre salles, une bonne ambiance à chaque fois</h2>
+      <p>Le Dream Team 42 reste notre QG, le Bowling et le Laser &amp; Beer nous ouvrent leurs portes, et l'Amicale Laïque reste disponible pour qui veut s'organiser soi-même.</p>
     </div>
 
     <div class="venues">
       <div class="venue-card status-active">
         <img class="venue-logo venue-logo-dream-team" src="images/logo_DREAM_TEAM_42.png" alt="Logo du Dream Team 42" width="108" height="108" loading="lazy" decoding="async">
-        <span class="venue-badge">Riorges</span>
+        <span class="venue-badge">QG officiel</span>
         <h3>Dream Team 42</h3>
-        <div class="place">110 Rue Paul Forge, 42153 Riorges</div>
-        <p>Nos jeux y sont stockés en permanence et six dates sont déjà posées jusqu'à la fin de l'année.</p>
+        <div class="place">Riorges</div>
+        <p>Notre lieu principal : nos jeux y sont stockés en permanence et six dates sont déjà posées jusqu'à la fin de l'année.</p>
         <a class="venue-link" href="https://dreamteam42.com/" target="_blank" rel="noopener">Voir le site du Dream Team 42</a>
         <div class="perk">Une boisson offerte à chaque adhérent, sur présentation de la carte</div>
       </div>
       <div class="venue-card status-new">
         <img class="venue-logo venue-logo-bowling" src="images/LOGO_BOWLING-1024x1024.png" alt="Logo du Bowling" width="108" height="108" loading="lazy" decoding="async">
-        <span class="venue-badge">Riorges</span>
+        <span class="venue-badge">Nouveau partenariat</span>
         <h3>Le Bowling</h3>
-        <div class="place">125 All. Charles de Gaulle, 42153 Riorges</div>
-        <p>Possibilité de consommer sur place — tarifs et avantages à venir.</p>
+        <div class="place">Riorges</div>
+        <p>Accès à une salle annexe au calme, testée sur trois dates cette année. Possibilité de consommer sur place — tarifs et avantages à venir.</p>
         <a class="venue-link" href="https://bowlingroanne.fr/" target="_blank" rel="noopener">Voir le site du Bowling</a>
       </div>
       <div class="venue-card status-new">
         <img class="venue-logo" src="images/logo_laserandbeers.png" alt="Logo du Laser &amp; Beer" width="96" height="96" loading="lazy" decoding="async">
-        <span class="venue-badge">Riorges</span>
+        <span class="venue-badge">Salle disponible</span>
         <h3>Le Laser &amp; Beer</h3>
-        <div class="place">704 Av. Charles de Gaulle, 42153 Riorges</div>
-        <p>Pour les groupes qui veulent organiser une session, avec consommation sur place appréciée.</p>
+        <div class="place">Riorges</div>
+        <p>Lieu disponible sur réservation pour les groupes qui veulent organiser une session, avec consommation sur place appréciée.</p>
         <a class="venue-link" href="https://www.instagram.com/laserandbeers/" target="_blank" rel="noopener">Voir l'Instagram du Laser &amp; Beer</a>
       </div>
       <div class="venue-card status-pause">
         <img class="venue-logo" src="images/logo_amicale.png" alt="Logo de l'Amicale Laïque" width="96" height="96" loading="lazy" decoding="async">
-        <span class="venue-badge">Roanne</span>
+        <span class="venue-badge">En pause</span>
         <h3>L'Amicale Laïque</h3>
-        <div class="place">25 rue Jean Macé, Roanne, France, 42300</div>
-        <p>Ouverture, fermeture et jeux à sa charge.</p>
+        <div class="place">Roanne</div>
+        <p>Salle bien placée mais coûteuse à gérer (très froide l'hiver, très chaude l'été). Toujours ouverte à qui veut s'en occuper : ouverture, fermeture et jeux à sa charge.</p>
         <a class="venue-link" href="https://www.facebook.com/alroanne42" target="_blank" rel="noopener">Voir le Facebook de l'Amicale Laïque</a>
       </div>
     </div>
 
+    <div class="callout">
+      <div>
+        <h3>On cherche des personnes pour prendre en charge les soirées</h3>
+        <p class="note">Répartir les dates entre plusieurs volontaires, c'est ce qui nous permet de continuer sans épuiser toujours les mêmes personnes.</p>
+      </div>
+      <div>
+        <ul>
+          <li>Installer et ranger les jeux</li>
+          <li>Aller chercher et ramener les jeux au Dream Team pour les sessions Bowling</li>
+          <li>Être présent du début à la fin de la soirée</li>
+          <li>Animer une partie — un vrai plus, mais pas obligatoire</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1249,7 +1301,10 @@ C’est même l’occasion parfaite de ressortir ces jeux qui prennent la poussi
     <div class="section-head">
       <div class="section-tag">Agenda des soirées jeux de société</div>
       <h2>Toutes les prochaines dates</h2>
-      <p>Retrouvez ici les soirées jeux prévues sur les prochaines semaines.</p>
+      <p>Retrouvez ici les soirées jeux prévues au Dream Team 42 et au Bowling de Riorges.</p>
+      <div class="section-actions">
+        <a class="btn btn-outline-dark" href="https://docs.google.com/spreadsheets/d/1BvUOZPiRrjrKBOGCacfgDTdvXa7WrplkR8T-eJ44Kj8/edit?usp=sharing" target="_blank" rel="noopener">Voir la liste des jeux</a>
+      </div>
     </div>
 
     <div class="schedule">
@@ -1276,56 +1331,50 @@ C’est même l’occasion parfaite de ressortir ces jeux qui prennent la poussi
   <div class="wrap">
     <div class="section-head">
       <div class="section-tag">Les événements</div>
-      <h2>Des événements pour faire vivre le jeu</h2>
-      <p>La Confrérie du Dé organise également plusieurs événements et festivals au cours de l’année, autour du jeu de société, du jeu de rôle et de l’imaginaire.
-De nos grands rendez-vous aux animations ponctuelles, ces événements sont autant d’occasions de faire découvrir le jeu à de nouveaux publics et de réunir notre communauté. Nous participons également à différents événements partenaires dans le Roannais et ses environs pour y proposer des animations ludiques.</p>
-      <p>Retrouvez tous nos prochains événements dans l’agenda.</p>
+      <h2>Six rendez-vous, essentiels pour faire vivre l'association</h2>
+      <p>Financièrement comme pour se faire connaître, ces événements comptent double. Trois demandent surtout votre présence le jour J, trois autres demandent une vraie organisation en amont.</p>
     </div>
 
     <div class="timeline-groups">
       <div>
+        <div class="tl-group-label">Il suffit d'être là</div>
         <div class="timeline">
           <div class="tl-item">
             <div class="tl-date" data-date="2026-09-12" data-end-date="2026-09-13">12–13 septembre 2026 · 10h–18h</div>
             <h4>Roanne Geek Convention</h4>
-            <p>Salle du Scarabée - Rue du Marclet, 42153 Riorges</p>
-            <p>Retrouvez-nous pour découvrir et jouer à une sélection de jeux de société dans l’univers geek et ludique de la convention.</p>
+            <p>Au Scarabée. Les jeux à animer sont répartis à l'avance et peuvent s'apprendre sans stress.</p>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2026-10-04">4 octobre 2026 · 10h–18h</div>
             <h4>Je Joue à Mably</h4>
-            <p>COSEC Mably - 1 Rue Pablo Neruda, 42300 Mably</p>
-            <p>Rendez-vous pour une journée placée sous le signe du jeu, avec de nombreuses tables à découvrir et à partager.</p>
+            <p>Au Cosec. Plus nous sommes disponibles, plus les présences se répartissent entre plusieurs personnes.</p>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2026-11-29">29 novembre 2026 · 10h–18h</div>
             <h4>Le FestiJeu</h4>
-            <p>Lieu à venir</p>
-            <p>Direction Lentigny pour une nouvelle journée de jeux et de découvertes, où la Confrérie vous fera jouer à une sélection de jeux de société.</p>
+            <p>À Lentigny. Faites-nous connaître vos disponibilités dès maintenant.</p>
           </div>
         </div>
       </div>
 
       <div>
+        <div class="tl-group-label">Ça se prépare en amont</div>
         <div class="timeline">
           <div class="tl-item urgent">
             <div class="tl-date" data-date="2026-10-301">31 octobre 2026</div>
             <h4>Halloween à La Doux</h4>
-            <p>Le Domaine de La Doux - 468 Chemin de la Doux, 42750 Saint-Denis-de-Cabanne</p>
-            <p>Le Domaine de La Doux se transforme pour Halloween ! Venez vivre une journée immersive et horrifique mêlant Escape Game, Murder Party, jeu de rôle, jeux de société, Loup-Garou et activités pour les enfants.</p>
+            <p>Saint-Denis-de-Cabanne. Notre priorité immédiate — un document dédié est à lire en priorité.</p>
             <span class="tl-flag">Besoin urgent de renfort</span>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2027-02-06" data-end-date="2027-02-07">6–7 février 2027</div>
             <h4>La Nuit dont Vous êtes le Héros</h4>
-            <p>Salle Diapason de Roanne - 25 Bd de Thiers, 42300 Roanne</p>
-            <p>Pendant tout un week-end, plongez dans l’univers du jeu de rôle et vivez de nouvelles aventures autour de nombreuses tables, que vous soyez rôliste confirmé ou simple curieux.</p>
+            <p>Roanne, salle du Diapason. Date posée, mais maintenue sous réserve de l'implication de chacun.</p>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2027-04-24" data-end-date="2027-04-25">24–25 avril 2027</div>
             <h4>À Vous de Jouer !</h4>
-            <p>Salle à venir</p>
-            <p>Deux jours pour jouer, découvrir et partager autour d'une grande sélection de jeux de société, avec des tables pour tous les âges, tous les goûts et tous les niveaux.</p>
+            <p>Roanne, salle du Diapason. Comme pour février, le projet dépend de la mobilisation autour de l'association.</p>
           </div>
         </div>
       </div>
@@ -1340,9 +1389,8 @@ De nos grands rendez-vous aux animations ponctuelles, ces événements sont auta
         </div>
         <figcaption class="event-spotlight-copy">
           <div class="event-spotlight-kicker">A venir</div>
-          <h3>Une étrange soirée se prépare à La Doux …</h3>
-          <p>Le 31 octobre, les portes du Domaine de La Doux s’ouvrent pour une journée placée sous le signe du mystère et de l’épouvante.
-Oserez-vous mener l’enquête, affronter vos peurs et vous aventurer dans le domaine ?</p>
+          <h3>Halloween 2026 est désormais en ligne</h3>
+          <p>Le prochain grand rendez-vous approche. Retrouvez l'affiche directement sur le site et ouvrez la reservation HelloAsso pour bloquer votre place avant l'evenement.</p>
           <div class="event-spotlight-note">31 octobre 2026 · Domaine de La Doux · Saint-Denis-de-Cabanne</div>
           <a class="btn btn-primary event-spotlight-link" href="halloween-2026/index.html" target="_blank" rel="noopener noreferrer">Plus d'infos</a>
         </figcaption>
@@ -1371,18 +1419,15 @@ Oserez-vous mener l’enquête, affronter vos peurs et vous aventurer dans le do
   <div class="wrap">
     <div class="section-head">
       <div class="section-tag">Jeu de rôle</div>
-      <h2>Et si on lançait les dés ?</h2>
+      <h2>Deux campagnes en cours, et de plus en plus de demandes</h2>
     </div>
 
     <div class="jdr-grid">
       <div class="jdr-text">
-        <p>Le jeu de rôle occupe également une place importante au sein de la Confrérie.</p>
-        <p>Nous proposons aussi bien des one-shots que des campagnes, dans des univers et des systèmes variés.</p>
-        <p>Que vous soyez rôliste aguerri ou que vous n’ayez encore jamais créé de personnage, notre objectif est de faciliter les rencontres entre joueurs et meneurs de jeu pour permettre à chacun de trouver une table qui lui correspond.</p>
-        <p>Il vous faudra avoir une adhésion à l’association valide pour l’année en cours afin vous inscrire à une table.</p>
-        <p>Envie de découvrir le jeu de rôle ?
-Vous cherchez des joueurs ou un MJ pour votre prochaine campagne ?
-Jetez un œil à nos propositions de tables et lancez-vous ! Rejoignez-nous sur Discord !</p>
+        <p>Les MJ ont déposé leurs propositions sur un tableau d'inscription commun — aux joueurs de venir s'inscrire. Un compte Google est nécessaire pour y accéder.</p>
+        <p>Le JDR a toujours été réservé aux adhérents, une règle qui s'était perdue en route. Pas de régularisation demandée pour 2026 : si l'association continue en 2027, l'adhésion redeviendra obligatoire pour participer.</p>
+        <p>Le jeu de rôle a aussi sa place sur nos trois grands événements — on compte sur les groupes pour être au rendez-vous.</p>
+        <p><a class="btn btn-outline-dark" href="https://docs.google.com/spreadsheets/d/1xNGb_ri_lDCSyBLwXLVuXL-UWOnCQJacNMxJUfc01KQ/edit?usp=sharing" target="_blank" rel="noopener">Sessions disponibles pour info</a></p>
       </div>
 
       <div class="jdr-card">
@@ -1402,23 +1447,19 @@ Jetez un œil à nos propositions de tables et lancez-vous ! Rejoignez-nous sur 
   <div class="wrap">
     <div class="cta-inner">
       <div class="section-tag" style="color:var(--orange);">Et maintenant, c'est à vous</div>
-      <h2>Et si votre prochaine partie commençait ici ?</h2>
-      <p>Pas besoin d’être membre depuis toujours, de connaître toutes les règles ou même de venir accompagné pour participer à l’un de nos évènements !</p>
-      <p>La Confrérie du Dé est ouverte à tous ceux qui ont envie de jouer, de découvrir et de rencontrer d’autres passionnés.</p>
-      <p>Le plus simple pour nous rejoindre ? Venez à l’un de nos événements ! Une soirée jeux, une partie de jeu de rôle, un festival… poussez la porte, asseyez-vous à une table et lancez les dés.</p>
-      <p>Et si vous souhaitez soutenir l’association ou vous inscrire au jeu de rôle, rien de plus simple que d’adhérer !</p>
-      <p><strong>Adhésion à l’année : 20€ </strong></p>
-      <p>L’adhésion donne accès aux tables de jeux de rôle, à une consommation gratuite lors des soirées jeux de l’association au Dream Team 42, et d’autres avantages !</p>
+      <h2>On a longtemps gardé la main sur tout. On aimerait la partager.</h2>
+      <p>Les événements auxquels vous avez déjà participé nous ont montré que vous êtes tout à fait capables de prendre des initiatives. L'idée n'est pas de tout vous laisser porter — on reste aux commandes — mais que chacun apporte sa pierre, selon ses envies, ses compétences et son temps disponible.</p>
+      <p>Plus nous serons nombreux à nous répartir les choses, plus La Confrérie pourra continuer à vivre sans reposer toujours sur les mêmes personnes.</p>
+      <div class="chips">
+        <span class="chip">Une soirée ponctuelle</span>
+        <span class="chip">Un événement</span>
+        <span class="chip">Une idée</span>
+        <span class="chip">Une compétence</span>
+        <span class="chip">Un engagement régulier</span>
+      </div>
       <div class="cta-social-row">
-        <p class="cta-social-intro">En dehors de nos évènements, restez connectés !</p>
-        <p>La Confrérie continue de vivre entre deux événements !</p>
-        <p>Rejoignez nos espaces de discussion pour échanger avec les autres membres, trouver des joueurs, proposer une partie, partager vos découvertes ou simplement papoter.</p>
+        <p class="cta-social-intro">Suivez nos soirées sur Facebook ou discuter avec noussur Discord</p>
         <div class="cta-actions">
-        <a class="social-icon-link social-icon-link-whatsapp" href="https://chat.whatsapp.com/GsHMITVmvNw8bLd8nOegpJ" target="_blank" rel="noopener" aria-label="WhatsApp de La Confrérie du Dé">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M19.11 4.93A9.8 9.8 0 0 0 12.09 2C6.68 2 2.28 6.39 2.28 11.81c0 1.74.45 3.44 1.31 4.95L2 22l5.39-1.54a9.76 9.76 0 0 0 4.69 1.2h.01c5.41 0 9.81-4.4 9.81-9.81 0-2.62-1.02-5.07-2.79-6.92Zm-7.02 15.07h-.01a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.2.91.86-3.12-.2-.32a8.12 8.12 0 0 1-1.24-4.34c0-4.48 3.65-8.12 8.13-8.12 2.17 0 4.21.84 5.73 2.38a8.06 8.06 0 0 1 2.37 5.74c0 4.47-3.64 8.12-8.11 8.12Zm4.45-6.09c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.91-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.77-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3s-.84.82-.84 1.99.86 2.3.98 2.46c.12.16 1.68 2.57 4.06 3.6.57.25 1.01.4 1.35.51.57.18 1.08.15 1.49.09.45-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
-          </svg>
-        </a>
         <a class="social-icon-link" href="https://www.facebook.com/profile.php?id=100086593683833" target="_blank" rel="noopener" aria-label="Facebook de La Confrérie du Dé">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H16.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.2v3H10V22h3.5z"/>
@@ -1432,21 +1473,6 @@ Jetez un œil à nos propositions de tables et lancez-vous ! Rejoignez-nous sur 
         </div>
       </div>
       <p class="cta-alt-link">Vous pouvez aussi juste rejoindre une sortie sur <a href="https://entrepotes.org" target="_blank" rel="noopener">entrepotes.org</a>.</p>
-    </div>
-  </div>
-</section>
-
-<section id="aller-plus-loin">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Et si vous vouliez aller plus loin ?</h2>
-    </div>
-    <div class="story">
-      <p>La Confrérie, ce sont aussi des personnes qui donnent un peu de leur temps pour <strong>faire vivre l'association et ses projets</strong>.</p>
-      <p>Vous avez une idée ? Une compétence à partager ? Envie de donner un coup de main lors d'un événement ? Vous souhaitez proposer une animation ou vous investir davantage ?</p>
-      <p><strong>Toutes les contributions sont les bienvenues.</strong></p>
-      <p>Il n'est pas nécessaire de s'engager à long terme : <strong>un coup de main ponctuel, une idée ou quelques heures peuvent déjà faire la différence.</strong></p>
-      <p>N'hésitez pas à contacter quelqu'un du bureau pour en parler via l'un de nos canaux ou lors d'un de nos évènements.</p>
     </div>
   </div>
 </section>
