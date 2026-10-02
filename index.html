@@ -611,7 +611,8 @@
   }
   .venue-card .place{
     font-size: 0.9rem;
-    color: var(--ink-third);
+    color: var(--red-mid);
+    font-weight: 600;
     margin-bottom: 12px;
   }
   .venue-card p{
@@ -734,6 +735,14 @@
     font-size: 0.94rem;
     color: var(--white-70);
     max-width: 56ch;
+  }
+  .tl-item .tl-location{
+    margin-bottom: 8px;
+    color: var(--orange);
+    font-weight: 600;
+  }
+  .tl-item.urgent .tl-location{
+    color: var(--red-bright);
   }
   .tl-flag{
     display: inline-block;
@@ -1288,19 +1297,19 @@ De nos grands rendez-vous aux animations ponctuelles, ces événements sont auta
           <div class="tl-item">
             <div class="tl-date" data-date="2026-09-12" data-end-date="2026-09-13">12–13 septembre 2026 · 10h–18h</div>
             <h4>Roanne Geek Convention</h4>
-            <p>Salle du Scarabée - Rue du Marclet, 42153 Riorges</p>
+            <p class="tl-location">Salle du Scarabée - Rue du Marclet, 42153 Riorges</p>
             <p>Retrouvez-nous pour découvrir et jouer à une sélection de jeux de société dans l’univers geek et ludique de la convention.</p>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2026-10-04">4 octobre 2026 · 10h–18h</div>
             <h4>Je Joue à Mably</h4>
-            <p>COSEC Mably - 1 Rue Pablo Neruda, 42300 Mably</p>
+            <p class="tl-location">COSEC Mably - 1 Rue Pablo Neruda, 42300 Mably</p>
             <p>Rendez-vous pour une journée placée sous le signe du jeu, avec de nombreuses tables à découvrir et à partager.</p>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2026-11-29">29 novembre 2026 · 10h–18h</div>
             <h4>Le FestiJeu</h4>
-            <p>Lieu à venir</p>
+            <p class="tl-location">Lieu à venir</p>
             <p>Direction Lentigny pour une nouvelle journée de jeux et de découvertes, où la Confrérie vous fera jouer à une sélection de jeux de société.</p>
           </div>
         </div>
@@ -1311,20 +1320,20 @@ De nos grands rendez-vous aux animations ponctuelles, ces événements sont auta
           <div class="tl-item urgent">
             <div class="tl-date" data-date="2026-10-301">31 octobre 2026</div>
             <h4>Halloween à La Doux</h4>
-            <p>Le Domaine de La Doux - 468 Chemin de la Doux, 42750 Saint-Denis-de-Cabanne</p>
+            <p class="tl-location">Le Domaine de La Doux - 468 Chemin de la Doux, 42750 Saint-Denis-de-Cabanne</p>
             <p>Le Domaine de La Doux se transforme pour Halloween ! Venez vivre une journée immersive et horrifique mêlant Escape Game, Murder Party, jeu de rôle, jeux de société, Loup-Garou et activités pour les enfants.</p>
             <span class="tl-flag">Besoin urgent de renfort</span>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2027-02-06" data-end-date="2027-02-07">6–7 février 2027</div>
             <h4>La Nuit dont Vous êtes le Héros</h4>
-            <p>Salle Diapason de Roanne - 25 Bd de Thiers, 42300 Roanne</p>
+            <p class="tl-location">Salle Diapason de Roanne - 25 Bd de Thiers, 42300 Roanne</p>
             <p>Pendant tout un week-end, plongez dans l’univers du jeu de rôle et vivez de nouvelles aventures autour de nombreuses tables, que vous soyez rôliste confirmé ou simple curieux.</p>
           </div>
           <div class="tl-item">
             <div class="tl-date" data-date="2027-04-24" data-end-date="2027-04-25">24–25 avril 2027</div>
             <h4>À Vous de Jouer !</h4>
-            <p>Salle à venir</p>
+            <p class="tl-location">Salle à venir</p>
             <p>Deux jours pour jouer, découvrir et partager autour d'une grande sélection de jeux de société, avec des tables pour tous les âges, tous les goûts et tous les niveaux.</p>
           </div>
         </div>
