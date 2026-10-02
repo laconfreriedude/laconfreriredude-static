@@ -346,13 +346,16 @@
     background-size: auto, auto, auto;
   }
   .hero-inner{
-    max-width: var(--max-w);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 28px;
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .hero-main{
+    max-width: 720px;
   }
   .hero-eyebrow{
     font-size: 0.92rem;
@@ -371,11 +374,58 @@
     font-weight: 900;
     color: var(--orange);
   }
-  .hero p.lede{
+  .hero-copy{
+    display: grid;
+    gap: 16px;
     margin-top: 22px;
-    font-size: 1.12rem;
-    max-width: 46ch;
+    max-width: 58ch;
+  }
+  .hero-copy p{
+    margin: 0;
     color: var(--white-80);
+    font-size: 1.05rem;
+  }
+  .hero-aside{
+    display: grid;
+    gap: 18px;
+    padding: 26px;
+    border: 1px solid var(--white-line-soft);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    box-shadow: 0 20px 48px rgba(0,0,0,0.28);
+  }
+  .hero-aside-intro{
+    margin: 0;
+    color: var(--white-90);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  .hero-highlights{
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hero-highlights li{
+    padding: 14px 16px;
+    border: 1px solid var(--white-line-soft);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.04);
+    color: var(--white-90);
+  }
+  .hero-highlights strong{
+    display: block;
+    margin-bottom: 4px;
+    color: var(--orange);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .hero-highlights span{
+    display: block;
+    font-size: 0.97rem;
+    color: var(--white-80);
+    line-height: 1.5;
   }
   .hero-actions{
     margin-top: 34px;
@@ -448,50 +498,6 @@
     background: var(--purple-soft);
     box-shadow: 0 8px 18px rgba(16,16,19,0.08);
     transform: translateY(-2px);
-  }
-
-  .die{
-    width: clamp(190px, 24vw, 300px);
-    height: auto;
-    aspect-ratio: 1 / 1;
-    display: block;
-    object-fit: contain;
-    justify-self: center;
-    transform-origin: center;
-    will-change: transform;
-    animation: dieRoll 8.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-  }
-  @keyframes dieRoll{
-    0% {
-      transform: rotate(-8deg) translateY(0) scale(1);
-    }
-    8% {
-      transform: rotate(110deg) translateY(-10px) scale(1.05);
-    }
-    16% {
-      transform: rotate(245deg) translateY(2px) scale(0.97);
-    }
-    22%, 34% {
-      transform: rotate(270deg) translateY(0) scale(1);
-    }
-    42% {
-      transform: rotate(385deg) translateY(-8px) scale(1.04);
-    }
-    50% {
-      transform: rotate(530deg) translateY(1px) scale(0.98);
-    }
-    56%, 70% {
-      transform: rotate(540deg) translateY(0) scale(1);
-    }
-    78% {
-      transform: rotate(650deg) translateY(-6px) scale(1.03);
-    }
-    86% {
-      transform: rotate(805deg) translateY(0) scale(0.99);
-    }
-    100% {
-      transform: rotate(810deg) translateY(0) scale(1);
-    }
   }
 
   /* ---------- SECTION SCAFFOLDING ---------- */
@@ -1024,7 +1030,12 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px){
     .hero-inner{ grid-template-columns: 1fr; }
-    .die{ display: none; }
+    .hero-main{
+      max-width: none;
+    }
+    .hero-aside{
+      padding: 22px;
+    }
     .venues{ grid-template-columns: 1fr; }
     .schedule{ grid-template-columns: 1fr; gap: 32px; }
     .timeline-groups{ grid-template-columns: 1fr; gap: 8px; }
@@ -1073,9 +1084,19 @@
     #agenda{ padding-top: 20px; }
     .hero{ padding: 68px 0 72px; }
     .hero h1{ font-size: clamp(2.2rem, 12vw, 3.2rem); }
-    .hero p.lede{
+    .hero-inner{
+      gap: 28px;
+    }
+    .hero-copy{
       margin-top: 18px;
+      gap: 14px;
+    }
+    .hero-copy p{
       font-size: 1rem;
+    }
+    .hero-aside{
+      gap: 14px;
+      padding: 20px 18px;
     }
     .hero-actions{
       margin-top: 24px;
@@ -1170,19 +1191,26 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <div>
+    <div class="hero-main">
       <div class="hero-eyebrow">Association de jeu — Roanne, Mably &amp; Riorges</div>
       <h1>Il suffit d’une table pour commencer une aventure. Jouons <em>ensemble</em> !</h1>
-      <p class="lede">À La Confrérie du Dé, nous sommes convaincus qu’un bon jeu est avant tout une occasion de partager un moment, de créer du lien et de faire de nouvelles rencontres.
-Sur le Roannais, nous organisons toute l’année des soirées jeux de société, des parties de jeu de rôle, des festivals et de nombreux événements pour faire découvrir le plaisir du jeu au plus grand nombre.
-Jeux d’ambiance, familiaux, experts ou narratifs : il y en a pour tous les goûts et tous les niveaux.
-Débutants comme joueurs confirmés, chacun a sa place autour de notre table.</p>
+      <div class="hero-copy">
+        <p>À La Confrérie du Dé, nous sommes convaincus qu’un bon jeu est avant tout une occasion de partager un moment, de créer du lien et de faire de nouvelles rencontres.</p>
+        <p>Sur le Roannais, nous organisons toute l’année des soirées jeux de société, des parties de jeu de rôle, des festivals et de nombreux événements pour faire découvrir le plaisir du jeu au plus grand nombre.</p>
+      </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#evenements">Halloween 2026</a>
         <a class="btn btn-ghost" href="#agenda">Agenda des soirées</a>
       </div>
     </div>
-    <img class="die" src="images/logo_confrerie_noir.png" alt="Logo de La Confrérie du Dé" width="300" height="300">
+    <aside class="hero-aside" aria-label="Temps forts de La Confrérie du Dé">
+      <p class="hero-aside-intro">Un lieu pour jouer, découvrir et rencontrer d’autres passionnés, que vous veniez pour une soirée, un événement ou votre première partie.</p>
+      <ul class="hero-highlights">
+        <li><strong>Pour tous les profils</strong><span>Jeux d’ambiance, familiaux, experts ou narratifs.</span></li>
+        <li><strong>Une association ouverte</strong><span>Débutants et joueurs confirmés sont les bienvenus autour de la table.</span></li>
+        <li><strong>Toute l’année</strong><span>Soirées jeux, jeu de rôle, festivals et rendez-vous ludiques dans le Roannais.</span></li>
+      </ul>
+    </aside>
   </div>
 </header>
 
